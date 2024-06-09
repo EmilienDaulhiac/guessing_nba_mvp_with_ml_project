@@ -175,6 +175,7 @@ def read_and_sort_CNN_MVP_prediction(cnn_predicition, df_MVP_player):
     dict_of_MVP_count = {}
     for num, pred in enumerate(cnn_predicition):
         index_of_predicted = np.argmax(pred)
+        print(index_of_predicted)
         player = df_MVP_player[num][index_of_predicted]["player"]
         dict_of_MVP_count.setdefault(player,0)
         dict_of_MVP_count[player] = dict_of_MVP_count.get(player,0) + 1

@@ -91,10 +91,25 @@ if __name__== '__main__':
 
     test_2023 = model3.predict(X_2023_cnn)
 
+    player_counts = {}
+
+    # Iterate through the list of lists
+    for sublist in player_D:
+        # Iterate through the dictionaries in each sublist
+        for player_dict in sublist:
+            player_name = player_dict['player']
+            # Increment the count for the player
+            if player_name in player_counts:
+                player_counts[player_name] += 1
+            else:
+                player_counts[player_name] = 1
+
+    player_counts
+
     CNN_predicted_MVP_output = read_and_sort_CNN_MVP_prediction(test_2023, player_D)
     # Prints the nicely formatted dictionary
     print('\n MVP top 10 based on CNN :\n ')
-    pprint.pprint({k: CNN_predicted_MVP_output[k] for k in list(CNN_predicted_MVP_output.keys())[:10]}, sort_dicts=False)
+    pprint.pprint({k: {'Count': CNN_predicted_MVP_output[k], 'Ratio': round(CNN_predicted_MVP_output[k]/player_counts[k], 4)} for k in list(CNN_predicted_MVP_output.keys())[:10]}, sort_dicts=False)
 
     y_pred_dt = model_decision_tree.predict(X_2023_regression)
     y_pred_rf = model_random_forest.predict(X_2023_regression)

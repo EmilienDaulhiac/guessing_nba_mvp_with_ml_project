@@ -1,0 +1,45 @@
+--------------------------------------------------------- 
+--------- Results of tests run on the CNN model --------- 
+--------------------------------------------------------- 
+ 
+This report list for the season selected to test our models 
+The actual MVP elected that specific year, the MVP selected by the model 
+ The amount of votes computed by the model, and the actual amount of votes the player got
+ 
+--------- 
+ Guess n°1  - season 1985
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.716879999999999  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.716879999999999  Real odds: 0.978
+--------- 
+ Guess n°2  - season 2009
+Success: True
+Guessed MVP: LeBron James
+Odds computed: 0.9070618333333308  Real odds: 0.969
+Real MVP: LeBron James
+Odds computed: 0.9070618333333308  Real odds: 0.969
+--------- 
+ Guess n°3  - season 2011
+Success: False
+Guessed MVP: LeBron James
+Odds computed: 0.5768949999999997  Real odds: 0.431
+Real MVP: Derrick Rose
+Odds computed: 0.30378116666666694  Real odds: 0.977
+--------- 
+ Guess n°4  - season 2019
+Success: True
+Guessed MVP: Giannis Antetokounmpo
+Odds computed: 0.6808815000000015  Real odds: 0.932
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.6808815000000015  Real odds: 0.932
+--------- 
+ Guess n°5  - season 2022
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.6962372500000032  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.6962372500000032  Real odds: 0.875
+ ---- Overall result -----
+Accuracy: 80.0%
