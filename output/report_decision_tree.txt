@@ -1,11 +1,6 @@
---------------------------------------------------------- 
---------- Results of tests run on the CNN model --------- 
---------------------------------------------------------- 
- 
-This report list for the season selected to test our models 
-The actual MVP elected that specific year, the MVP selected by the model 
- The amount of votes computed by the model, and the actual amount of votes the player got
- 
+Held-out evaluation: Decision Tree
+For each test season, predicted MVP vs. the actual MVP, with computed and real vote shares.
+
 --------- 
  Guess n°1  - season 1985
 Success: True

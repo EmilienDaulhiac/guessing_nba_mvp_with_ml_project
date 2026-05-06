@@ -26,28 +26,25 @@ def train_cnn(X_train, y_train,
     Returns:
     model (object)
     """
-
-    # Define the CNN model
     model = models.Sequential()
-    
-    # Add convolutional layers
-    for i,conv_filter in enumerate(conv_filters):
-        model.add(layers.Conv2D(conv_filter, kernel_size=(3, 22), activation='relu', input_shape=X_train.shape[1:]))
+    input_shape_of_Conv = X_train.shape[1:]
+    for i, conv_filter in enumerate(conv_filters):
+        model.add(layers.Conv2D(
+            conv_filter,
+            kernel_size=(3, input_shape_of_Conv[1]),
+            activation='relu',
+            input_shape=input_shape_of_Conv,
+        ))
         model.add(layers.MaxPooling2D(pool_size=(pool_sizes[i], 1)))
-    
-    # Flatten the output before the dense layers
+
     model.add(layers.Flatten())
-
-    # Add dense layers with dropout
     model.add(layers.Dense(32, activation='relu'))
-    model.add(layers.Dense(y_train.shape[1], activation='sigmoid'))  # Assuming 10 classes for classification
+    model.add(layers.Dense(y_train.shape[1], activation='softmax'))
 
-    # Compile the model
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
-                  loss='binary_crossentropy', 
+                  loss='categorical_crossentropy', 
                   metrics=['accuracy'])
 
-    # Train the model
     model.fit(X_train, y_train, epochs=num_epochs, validation_split=0.2, verbose=verbose)
 
     return model

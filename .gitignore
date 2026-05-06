@@ -1,2 +1,26 @@
-notebooks/
-pic_for_report/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / tooling
+.idea/
+.vscode/
+.claude/
+
+# Project artifacts
+*.h5
+*.keras

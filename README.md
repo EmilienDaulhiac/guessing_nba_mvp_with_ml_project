@@ -1,114 +1,78 @@
-# Predicting this year NBA Most Valuable Player (MVP)
+# NBA MVP Predictor
 
-Author: Emilien Daulhiac ([@EmilienDaulhiac](https://github.com/EmilienDaulhiac))
+Predicting the NBA Most Valuable Player from per-season player statistics.
+Trained on 1982-2022 data; the 2023-24 prediction step scrapes
+[basketball-reference.com](https://www.basketball-reference.com) for current
+stats. This is a 2024 snapshot, not an actively retrained model.
 
-## Description
+Two framings are compared:
 
-This repository contains the code for our project focused on predicting the NBA MVP (Most Valuable Player) for the 2023-24 season. the goal is to enhance our understanding of the factors influencing player success and MVP votes through a data-driven approach.
+- **Regression baseline** (Decision Tree, Random Forest) — predict each
+  player's MVP vote share, take the season's top-ranked player as the MVP.
+- **CNN classifier** — different framing: each example is a `(10 players,
+  N features)` matrix sampled from the season's top vote-getters; the
+  network outputs a softmax over the 10 positions and is trained to pick
+  the actual MVP from the pool.
 
-## Overview
-In this project, we explore two distinct methods for predicting the NBA MVP:
+Both use the same eligibility filter (cutoffs on VORP, games, minutes, USG%,
+PER, WS) so candidate sets line up across models.
 
-* Regression-based Method: Predicting the MVP votes for each player through regression and ranking them accordingly.
-* Convolutional Neural Network (CNN) Method: Selecting a group of eligible players and determining the MVP out of them using a convolutional network.
+## Held-out seasons
 
-## Project Objectives
+The Random Forest is evaluated on five seasons left out of training. Top-ranked player by predicted vote share vs. the actual winner:
 
-* Improve comprehension of the factors influencing player success and MVP votes.
-* Compare the performance of the regression-based and CNN-based methods.
-* Assess the model's performance on unseen data and current 2023-24 player statistics.
+| Season | Predicted MVP        | Actual MVP            | Match |
+|--------|----------------------|------------------------|:-----:|
+| 1985   | Larry Bird           | Larry Bird             |   ✓   |
+| 2009   | LeBron James         | LeBron James           |   ✓   |
+| 2011   | LeBron James         | Derrick Rose           |   ✗   |
+| 2019   | Giannis Antetokounmpo| Giannis Antetokounmpo  |   ✓   |
+| 2022   | Nikola Jokić         | Nikola Jokić           |   ✓   |
 
-## Requirements
+4/5 on the holdout. The 2011 miss is the upset season where Derrick Rose won
+over LeBron, which most contemporary models also got wrong. Decision Tree
+gets 3/5. The CNN gets ~45% per-partition accuracy across the shuffled
+10-player groups, which is well above the 10% chance baseline; its softmax
+output is not calibrated to predict vote share. Run-by-run reports are in
+`output/`.
 
-To install the required libraries, you can use pip. Run the following command:
+## Install and run
+
+Python 3.11 recommended (TensorFlow 2.x doesn't ship wheels for newer Python yet).
 
 ```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
-```
-
-## Contents
-* Data/: Contains datasets used for training and testing. (NBA Players stats beween 1982 and 2022) Dataset is publicly available on ([kaggle](https://www.kaggle.com/datasets/robertsunderhaft/nba-player-season-statistics-with-mvp-win-share)). The dataset was scrapped from ([Basketball Reference] (https://www.basketball-reference.com)).
-* src/: All pythons script
-    - src/PreProcessing : All preprocessing steps (MVP Eligibilty Criteria, Scaling, Encoding)
-    - src/modeling : Function linked to train models and evaluate them
-    - get_data_online : WebScrapping script to get up-to-date 2023-24 NBA players stats ([Basketball Reference] (https://www.basketball-reference.com)).
-* cleaning_dataset.ipynb : jupyter notebook to dive into the process to clean the dataset
-* modeling.ipynb : jupyter notebook describing the modeling process and evaluation
-README.md: Overview of the project and instructions.
-
-```
-.
-├── Data
-│   ├── NBA_Dataset.csv
-│   └── external
-│       └── teams_abbreviation.json
-├── README.md
-├── cleaning_dataset.ipynb
-├── main.py
-├── modeling.ipynb
-└── src
-    ├── PreProcessing
-    │   ├── Data_cleaning.py
-    │   ├── __init__.py
-    ├── get_data_online
-    │   ├── __init__.py
-    │   ├── baskeref_player_data_scraper.py
-    │   └── html_scraper.py
-    └── modeling
-        ├── __init__.py
-        ├── model_cnn.py
-        ├── model_decison_tree.py
-        ├── model_random_forest.py
-        └── utils.py
-```
-
-## Run the project
-
-At the root at the project, run the following command:
-
-```bash
 python main.py
 ```
 
-This will run the following steps:
-* Load training dataset and clean it
-* Train all three models (Decision Tree, Random Forest, CNN)
-* Test all three models on the unused part of the data
-* Scrape BasketReference.com tp get up-to-date stats
-* Prepare the data to match imput data of all models
-* Predict this Year NBA MVP using all three models
+`main.py` runs end-to-end: train all three models, evaluate on the holdout
+seasons (writes `output/report_*.txt`), then scrape `basketball-reference.com`
+for current-season stats and print the 2023-24 MVP leaderboard.
 
-At the end of process, three files will appear in a output folder
+The live-prediction step depends on basketball-reference's HTML structure.
+Holdout evaluation runs and writes its reports before scraping, so even if
+the scrape fails the model evaluation results are produced.
 
-```
-.
-└── output
- ├── report_decision_tree.txt
- ├── report_test_cnn.txt
- └── report_test_random_forest.txt
-```
-
-
-Each file describe how the model did on the selected test season. 
-For example here is what we can looks like:
+## Layout
 
 ```
-Guess n°1  - season 1985
-Success: True
-Guessed MVP: Larry Bird
-Odds computed: 0.966  Real odds: 0.978
-Real MVP: Larry Bird
-Odds computed: 0.966  Real odds: 0.978
+Data/                       Training CSV and team-abbreviation lookup
+src/PreProcessing/          Eligibility filter, KNN imputation, encoding
+src/modeling/               Three model trainers + evaluation utilities
+src/get_data_online/        basketball-reference.com scraper
+cleaning_dataset.ipynb      EDA: choosing the eligibility cutoffs
+modeling.ipynb              Grid search and model comparison
+main.py                     End-to-end pipeline
 ```
 
-The season selected, with who was the actual MVP that year aand who the model selected. This gives you an idea on how well the model is performing. 
+## Data
 
+Training data: [NBA Player Season Statistics with MVP Win Share](https://www.kaggle.com/datasets/robertsunderhaft/nba-player-season-statistics-with-mvp-win-share)
+on Kaggle, originally scraped from basketball-reference.com. Committed to the
+repo at `Data/NBA_Dataset.csv` for reproducibility.
 
-## Notes 
+## License
 
-Some important things to know:
-- The webscrapping tool is heavily dependent on the BasketBall Reference website acrchitecture and a slight chqnge in the format might lead to errors when trying to run the code. This part might need some more works for a more robust solution.
-- Chrome is neccessary to run the webscrapping tool.
-
-
-
+MIT. See `LICENSE`.

@@ -1,0 +1,391 @@
+Held-out evaluation: CNN
+For each test partition (10-player pool sampled from the season), predicted MVP vs. the actual MVP.
+The CNN softmax output is not calibrated to predict vote share.
+
+--------- 
+ Guess n°1
+Success: False
+Guessed MVP: Sidney Moncrief
+Odds computed: 0.3776710331439972  Real odds: 0.083
+Real MVP: Larry Bird
+Odds computed: 0.015072119422256947  Real odds: 0.978
+--------- 
+ Guess n°2
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.4040215015411377  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.4040215015411377  Real odds: 0.978
+--------- 
+ Guess n°3
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.701654314994812  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.701654314994812  Real odds: 0.978
+--------- 
+ Guess n°4
+Success: False
+Guessed MVP: Magic Johnson
+Odds computed: 0.6683002710342407  Real odds: 0.338
+Real MVP: Larry Bird
+Odds computed: 0.14603659510612488  Real odds: 0.978
+--------- 
+ Guess n°5
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.37710124254226685  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.37710124254226685  Real odds: 0.978
+--------- 
+ Guess n°6
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.3872945308685303  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.3872945308685303  Real odds: 0.978
+--------- 
+ Guess n°7
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.30422285199165344  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.30422285199165344  Real odds: 0.978
+--------- 
+ Guess n°8
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.701931357383728  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.701931357383728  Real odds: 0.978
+--------- 
+ Guess n°9
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.8147398829460144  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.8147398829460144  Real odds: 0.978
+--------- 
+ Guess n°10
+Success: True
+Guessed MVP: Larry Bird
+Odds computed: 0.858565628528595  Real odds: 0.978
+Real MVP: Larry Bird
+Odds computed: 0.858565628528595  Real odds: 0.978
+--------- 
+ Guess n°11
+Success: False
+Guessed MVP: Sidney Moncrief
+Odds computed: 0.4605807363986969  Real odds: 0.083
+Real MVP: Larry Bird
+Odds computed: 0.22835002839565277  Real odds: 0.978
+--------- 
+ Guess n°12
+Success: False
+Guessed MVP: Chris Paul
+Odds computed: 0.44040948152542114  Real odds: 0.159
+Real MVP: LeBron James
+Odds computed: 0.07455004006624222  Real odds: 0.969
+--------- 
+ Guess n°13
+Success: False
+Guessed MVP: Kobe Bryant
+Odds computed: 0.43095406889915466  Real odds: 0.577
+Real MVP: LeBron James
+Odds computed: 0.40431949496269226  Real odds: 0.969
+--------- 
+ Guess n°14
+Success: False
+Guessed MVP: Dwyane Wade
+Odds computed: 0.6506518125534058  Real odds: 0.562
+Real MVP: LeBron James
+Odds computed: 0.20750007033348083  Real odds: 0.969
+--------- 
+ Guess n°15
+Success: True
+Guessed MVP: LeBron James
+Odds computed: 0.2827071249485016  Real odds: 0.969
+Real MVP: LeBron James
+Odds computed: 0.2827071249485016  Real odds: 0.969
+--------- 
+ Guess n°16
+Success: False
+Guessed MVP: Shaquille O'Neal
+Odds computed: 0.6480652689933777  Real odds: 0.0
+Real MVP: LeBron James
+Odds computed: 0.1064104288816452  Real odds: 0.969
+--------- 
+ Guess n°17
+Success: False
+Guessed MVP: Dwyane Wade
+Odds computed: 0.2651280164718628  Real odds: 0.562
+Real MVP: LeBron James
+Odds computed: 0.19950957596302032  Real odds: 0.969
+--------- 
+ Guess n°18
+Success: False
+Guessed MVP: Chauncey Billups
+Odds computed: 0.7635367512702942  Real odds: 0.027
+Real MVP: LeBron James
+Odds computed: 0.04707622900605202  Real odds: 0.969
+--------- 
+ Guess n°19
+Success: False
+Guessed MVP: Dwyane Wade
+Odds computed: 0.4614846706390381  Real odds: 0.562
+Real MVP: LeBron James
+Odds computed: 0.4449608027935028  Real odds: 0.969
+--------- 
+ Guess n°20
+Success: False
+Guessed MVP: Chris Paul
+Odds computed: 0.5326040983200073  Real odds: 0.159
+Real MVP: LeBron James
+Odds computed: 0.15044710040092468  Real odds: 0.969
+--------- 
+ Guess n°21
+Success: True
+Guessed MVP: LeBron James
+Odds computed: 0.8007295727729797  Real odds: 0.969
+Real MVP: LeBron James
+Odds computed: 0.8007295727729797  Real odds: 0.969
+--------- 
+ Guess n°22
+Success: False
+Guessed MVP: Dwyane Wade
+Odds computed: 0.35612475872039795  Real odds: 0.562
+Real MVP: LeBron James
+Odds computed: 0.025843484327197075  Real odds: 0.969
+--------- 
+ Guess n°23
+Success: False
+Guessed MVP: Kevin Durant
+Odds computed: 0.21691931784152985  Real odds: 0.157
+Real MVP: Derrick Rose
+Odds computed: 0.08448973298072815  Real odds: 0.977
+--------- 
+ Guess n°24
+Success: False
+Guessed MVP: Dwight Howard
+Odds computed: 0.42157182097435  Real odds: 0.531
+Real MVP: Derrick Rose
+Odds computed: 0.0074486746452748775  Real odds: 0.977
+--------- 
+ Guess n°25
+Success: False
+Guessed MVP: LeBron James
+Odds computed: 0.2409205436706543  Real odds: 0.431
+Real MVP: Derrick Rose
+Odds computed: 0.04549765959382057  Real odds: 0.977
+--------- 
+ Guess n°26
+Success: False
+Guessed MVP: Kevin Love
+Odds computed: 0.6315253376960754  Real odds: 0.0
+Real MVP: Derrick Rose
+Odds computed: 0.04355773329734802  Real odds: 0.977
+--------- 
+ Guess n°27
+Success: False
+Guessed MVP: LeBron James
+Odds computed: 0.4529290199279785  Real odds: 0.431
+Real MVP: Derrick Rose
+Odds computed: 0.067275270819664  Real odds: 0.977
+--------- 
+ Guess n°28
+Success: True
+Guessed MVP: Derrick Rose
+Odds computed: 0.7434632182121277  Real odds: 0.977
+Real MVP: Derrick Rose
+Odds computed: 0.7434632182121277  Real odds: 0.977
+--------- 
+ Guess n°29
+Success: True
+Guessed MVP: Derrick Rose
+Odds computed: 0.3996528089046478  Real odds: 0.977
+Real MVP: Derrick Rose
+Odds computed: 0.3996528089046478  Real odds: 0.977
+--------- 
+ Guess n°30
+Success: True
+Guessed MVP: Derrick Rose
+Odds computed: 0.4941936433315277  Real odds: 0.977
+Real MVP: Derrick Rose
+Odds computed: 0.4941936433315277  Real odds: 0.977
+--------- 
+ Guess n°31
+Success: False
+Guessed MVP: LeBron James
+Odds computed: 0.48267704248428345  Real odds: 0.431
+Real MVP: Derrick Rose
+Odds computed: 0.33320745825767517  Real odds: 0.977
+--------- 
+ Guess n°32
+Success: False
+Guessed MVP: Dwight Howard
+Odds computed: 0.4792296290397644  Real odds: 0.531
+Real MVP: Derrick Rose
+Odds computed: 0.11722038686275482  Real odds: 0.977
+--------- 
+ Guess n°33
+Success: False
+Guessed MVP: LeBron James
+Odds computed: 0.35591915249824524  Real odds: 0.431
+Real MVP: Derrick Rose
+Odds computed: 0.02476208470761776  Real odds: 0.977
+--------- 
+ Guess n°34
+Success: False
+Guessed MVP: James Harden
+Odds computed: 0.4092209041118622  Real odds: 0.768
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.37495315074920654  Real odds: 0.932
+--------- 
+ Guess n°35
+Success: False
+Guessed MVP: James Harden
+Odds computed: 0.6323200464248657  Real odds: 0.768
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.02649061195552349  Real odds: 0.932
+--------- 
+ Guess n°36
+Success: True
+Guessed MVP: Giannis Antetokounmpo
+Odds computed: 0.7262980937957764  Real odds: 0.932
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.7262980937957764  Real odds: 0.932
+--------- 
+ Guess n°37
+Success: False
+Guessed MVP: James Harden
+Odds computed: 0.9191374182701111  Real odds: 0.768
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.002823460614308715  Real odds: 0.932
+--------- 
+ Guess n°38
+Success: True
+Guessed MVP: Giannis Antetokounmpo
+Odds computed: 0.5971999168395996  Real odds: 0.932
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.5971999168395996  Real odds: 0.932
+--------- 
+ Guess n°39
+Success: False
+Guessed MVP: Stephen Curry
+Odds computed: 0.5323867201805115  Real odds: 0.173
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.3987026810646057  Real odds: 0.932
+--------- 
+ Guess n°40
+Success: False
+Guessed MVP: James Harden
+Odds computed: 0.4382675588130951  Real odds: 0.768
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.11153209209442139  Real odds: 0.932
+--------- 
+ Guess n°41
+Success: True
+Guessed MVP: Giannis Antetokounmpo
+Odds computed: 0.6156760454177856  Real odds: 0.932
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.6156760454177856  Real odds: 0.932
+--------- 
+ Guess n°42
+Success: True
+Guessed MVP: Giannis Antetokounmpo
+Odds computed: 0.3864917755126953  Real odds: 0.932
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.3864917755126953  Real odds: 0.932
+--------- 
+ Guess n°43
+Success: False
+Guessed MVP: Paul George
+Odds computed: 0.410017192363739  Real odds: 0.352
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.20241375267505646  Real odds: 0.932
+--------- 
+ Guess n°44
+Success: False
+Guessed MVP: James Harden
+Odds computed: 0.2909773588180542  Real odds: 0.768
+Real MVP: Giannis Antetokounmpo
+Odds computed: 0.17913702130317688  Real odds: 0.932
+--------- 
+ Guess n°45
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.2761777639389038  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.2761777639389038  Real odds: 0.875
+--------- 
+ Guess n°46
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.3458870053291321  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.3458870053291321  Real odds: 0.875
+--------- 
+ Guess n°47
+Success: False
+Guessed MVP: Giannis Antetokounmpo
+Odds computed: 0.31653767824172974  Real odds: 0.595
+Real MVP: Nikola Jokić
+Odds computed: 0.02003610134124756  Real odds: 0.875
+--------- 
+ Guess n°48
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.6214298605918884  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.6214298605918884  Real odds: 0.875
+--------- 
+ Guess n°49
+Success: False
+Guessed MVP: Joel Embiid
+Odds computed: 0.8351931571960449  Real odds: 0.706
+Real MVP: Nikola Jokić
+Odds computed: 0.05404108390212059  Real odds: 0.875
+--------- 
+ Guess n°50
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.7930043935775757  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.7930043935775757  Real odds: 0.875
+--------- 
+ Guess n°51
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.531442403793335  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.531442403793335  Real odds: 0.875
+--------- 
+ Guess n°52
+Success: False
+Guessed MVP: LeBron James
+Odds computed: 0.47169649600982666  Real odds: 0.001
+Real MVP: Nikola Jokić
+Odds computed: 0.11541648954153061  Real odds: 0.875
+--------- 
+ Guess n°53
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.7585129141807556  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.7585129141807556  Real odds: 0.875
+--------- 
+ Guess n°54
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.5770359635353088  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.5770359635353088  Real odds: 0.875
+--------- 
+ Guess n°55
+Success: True
+Guessed MVP: Nikola Jokić
+Odds computed: 0.6084494590759277  Real odds: 0.875
+Real MVP: Nikola Jokić
+Odds computed: 0.6084494590759277  Real odds: 0.875
+Results: [False, True, True, False, True, True, True, True, True, True, False, False, False, False, True, False, False, False, False, False, True, False, False, False, False, False, False, True, True, True, False, False, False, False, False, True, False, True, False, False, True, True, False, False, True, True, False, True, False, True, True, False, True, True, True]
+Accuracy: 45.455%

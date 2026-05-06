@@ -60,13 +60,8 @@ def evaluate_MVP_classification_from_regression(
     if report_file_name is not None:
         file_report = open(report_file_name, 'w')
 
-        file_report.write(f'--------------------------------------------------------- \n')
-        file_report.write(f'--------- Results of tests run on the CNN model --------- \n')
-        file_report.write(f'--------------------------------------------------------- \n \n')
-
-        file_report.write(f'This report list for the season selected to test our models \n')
-        file_report.write(f'The actual MVP elected that specific year, the MVP selected by the model \n ')
-        file_report.write(f'The amount of votes computed by the model, and the actual amount of votes the player got\n \n')
+        file_report.write(f'Held-out evaluation: {name_model}\n')
+        file_report.write(f'For each test season, predicted MVP vs. the actual MVP, with computed and real vote shares.\n\n')
 
     succes_at_classifying_MVP = []
     for num,year in enumerate(df_test['season'].unique()):
@@ -124,16 +119,10 @@ def evaluate_cnn_model(model, X_test, y_test, player_dict, df_result = pd.DataFr
 
     if report_file_name is not None:
 
-        # Assuming you have already opened a file for writing
         with open(report_file_name, 'w') as file:
-            file.write(f'--------------------------------------------------------- \n')
-            file.write(f'--------- Results of tests run on the CNN model --------- \n')
-            file.write(f'--------------------------------------------------------- \n \n')
-
-            file.write(f"This report list for each partition of test which season actually it was extracted from \n")
-            file.write(f"The actual MVP elected that specific year, the MVP selected by the model on the given partition of eligible players \n") 
-            file.write(f"The odds computed by the model, and the actual amount of votes the player got\n")
-            file.write(f' /!\ Important to notes that the odds computed by the CNN model is not an attempt at predicting the number of votes \n \n')
+            file.write(f'Held-out evaluation: CNN\n')
+            file.write(f'For each test partition (10-player pool sampled from the season), predicted MVP vs. the actual MVP.\n')
+            file.write(f'The CNN softmax output is not calibrated to predict vote share.\n\n')
             for num, pred in enumerate(y_pred):
                 try:
                     index_of_predicted = np.where(pred == np.max(pred))[0][0]
@@ -175,7 +164,6 @@ def read_and_sort_CNN_MVP_prediction(cnn_predicition, df_MVP_player):
     dict_of_MVP_count = {}
     for num, pred in enumerate(cnn_predicition):
         index_of_predicted = np.argmax(pred)
-        print(index_of_predicted)
         player = df_MVP_player[num][index_of_predicted]["player"]
         dict_of_MVP_count.setdefault(player,0)
         dict_of_MVP_count[player] = dict_of_MVP_count.get(player,0) + 1
